@@ -1,11 +1,24 @@
+# --- OCR Engine (2024-2025 Stable for Python 3.12) ---
+# Version 2.6.2 is required because 2.6.1 is incompatible with Python 3.12
 paddlepaddle==2.6.2
 paddleocr==2.7.3
 
+# --- Object Detection & Tracking ---
+# Matches the yolov8n.pt seen in your project files
 ultralytics==8.2.0
+filterpy>=1.4.5
+scikit-image>=0.20.0
+scipy>=1.10.0
 
+# --- CRITICAL COMPATIBILITY FIXES ---
+# IMPORTANT: Must be < 2.0.0 to fix "module compiled against ABI version" error
+# This prevents the ImportError: numpy.core.multiarray failure
 numpy<2.0.0
 opencv-python>=4.8.0
 
+# --- Data Handling & UI ---
+# Supports the .csv files and tkinter-try.py in your project
+pandas>=2.0.0
 pillow>=10.0.0
 pyyaml>=6.0
 tqdm
